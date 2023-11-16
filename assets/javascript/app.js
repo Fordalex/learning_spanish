@@ -16,6 +16,28 @@ const data = {
     "bathroom": {
       "fixtures": window.bathroomFixtures,
       "accessories": window.bathroomAccessories
+    },
+    "garage": {
+      "fixtures": window.garageFixtures
+    }
+  },
+  "nature": {
+    "park": {
+      "facilities": window.parkFacilities,
+      "activities": window.parkActivities,
+      "wildlife": window.parkWildlife
+    }
+  },
+  "restaurant": {
+    "menu": {
+      "appetizers": window.menuAppetizers,
+      "main_courses": window.menuMainCourses,
+      "desserts": window.menuDesserts,
+      "beverages": window.menuBeverages
+    },
+    "customer_experience": {
+      "reservations": window.customerExperienceReservations,
+      "customer_service": window.customerExperienceCustomerService
     }
   }
 }
