@@ -1,118 +1,86 @@
 const data = {
   "house": {
     "kitchen": {
-      "kitchen_tools": {
-        "spoon": {
-          "masculine": null,
-          "feminine": "cuchara",
-          "neutral": null
-        },
-        "fork": {
-          "masculine": "tenedor",
-          "feminine": null,
-          "neutral": null
-        },
-        "knife": {
-          "masculine": "cuchillo",
-          "feminine": null,
-          "neutral": null
-        },
-        "plate": {
-          "masculine": null,
-          "feminine": "plato",
-          "neutral": null
-        }
-      },
-      "kitchen_furniture": {
-        "table": {
-          "masculine": null,
-          "feminine": "mesa",
-          "neutral": null
-        },
-        "chair": {
-          "masculine": "silla",
-          "feminine": null,
-          "neutral": null
-        }
-      }
+      "kitchen_tools": window.kitchenTools,
+      "kitchen_furniture": window.kitchenFurniture
     },
     "living_room": {
-      "furniture": {
-        "sofa": {
-          "masculine": null,
-          "feminine": "sofá",
-          "neutral": null
+      "furniture": [
+        {
+          "english": "sofa",
+          "spanish": "sofá",
+          "gender": "feminine"
         },
-        "coffee_table": {
-          "masculine": null,
-          "feminine": "mesa de centro",
-          "neutral": null
+        {
+          "english": "coffee table",
+          "spanish": "mesa de centro",
+          "gender": "feminine"
         }
-      },
-      "decorations": {
-        "painting": {
-          "masculine": "cuadro",
-          "feminine": null,
-          "neutral": null
+      ],
+      "decorations": [
+        {
+          "english": "painting",
+          "spanish": "cuadro",
+          "gender": "masculine"
         },
-        "vase": {
-          "masculine": null,
-          "feminine": "jarrón",
-          "neutral": null
+        {
+          "english": "vase",
+          "spanish": "jarrón",
+          "gender": "feminine"
         }
-      }
+      ]
     },
     "bedroom": {
-      "furniture": {
-        "bed": {
-          "masculine": "cama",
-          "feminine": null,
-          "neutral": null
+      "furniture": [
+        {
+          "english": "bed",
+          "spanish": "cama",
+          "gender": "masculine"
         },
-        "wardrobe": {
-          "masculine": "armario",
-          "feminine": null,
-          "neutral": null
+        {
+          "english": "wardrobe",
+          "spanish": "armario",
+          "gender": "masculine"
         }
-      },
-      "linen": {
-        "pillow": {
-          "masculine": null,
-          "feminine": "almohada",
-          "neutral": null
+      ],
+      "linen": [
+        {
+          "english": "pillow",
+          "spanish": "almohada",
+          "gender": "feminine"
         },
-        "blanket": {
-          "masculine": null,
-          "feminine": "manta",
-          "neutral": null
+        {
+          "english": "blanket",
+          "spanish": "manta",
+          "gender": "feminine"
         }
-      }
+      ]
     },
     "bathroom": {
-      "fixtures": {
-        "sink": {
-          "masculine": null,
-          "feminine": "lavabo",
-          "neutral": null
+      "fixtures": [
+        {
+          "english": "sink",
+          "spanish": "lavabo",
+          "gender": "feminine"
         },
-        "toilet": {
-          "masculine": "inodoro",
-          "feminine": null,
-          "neutral": null
+        {
+          "english": "toilet",
+          "spanish": "inodoro",
+          "gender": "masculine"
         }
-      },
-      "accessories": {
-        "towel": {
-          "masculine": null,
-          "feminine": "toalla",
-          "neutral": null
+      ],
+      "accessories": [
+        {
+          "english": "towel",
+          "spanish": "toalla",
+          "gender": "feminine"
         },
-        "soap": {
-          "masculine": null,
-          "feminine": "jabón",
-          "neutral": null
+        {
+          "english": "soap",
+          "spanish": "jabón",
+          "gender": "feminine"
         }
-      }
+      ]
     }
   }
 }
@@ -127,11 +95,8 @@ const app = Vue.createApp({
         questions: [],
         answerOptions: [],
         randomQuestion: null,
-        randomValue: null,
-        userAnswer: {
-          gender: null,
-          translation: null
-        },
+        randomAnswerValue: null,
+        userAnswer: null,
         correct: false,
         showAnswer: false,
         correctAnswer: null,
@@ -155,11 +120,11 @@ const app = Vue.createApp({
         this.pickRandomQuestion();
       },
       pickRandomQuestion() {
-        this.answerOptions = this.extractAllValues()
         const questionKeys = Object.keys(this.questions);
         const randomKey = questionKeys[Math.floor(Math.random() * questionKeys.length)];
         this.randomQuestion = randomKey;
-        this.randomValue = this.questions[randomKey];
+        this.randomAnswerValue = this.questions[randomKey]['spanish'];
+        this.answerOptions = this.extractAllValues(this.randomAnswerValue)
       },
       chooseGender(gender) {
         this.userAnswer.gender = gender;
@@ -169,21 +134,20 @@ const app = Vue.createApp({
         this.userAnswer.translation = translation;
         this.checkAnswer();
       },
-      checkAnswer() {
-        if (this.userAnswer.gender && this.userAnswer.translation) {
-          const genderKey = this.userAnswer.gender.toLowerCase();
-          this.correct = this.randomValue[genderKey] === this.userAnswer.translation;
-          console.log(genderKey)
-          console.log(this.randomValue)
-          this.correctAnswer = this.randomValue[genderKey];
-          this.showAnswer = true;
-          this.message = `
-            <b>Correct Gender:</b> ${genderKey}<br>
-            <b>Correct Answer:</b> ${this.correctAnswer}<br>
-          `
+      checkAnswer(option) {
+        this.userAnswer = option
+
+        if (option === this.randomAnswerValue) {
+          this.correct = true;
         } else {
-          this.message = "Please answer the question."
+          this.correct = false;
         }
+
+        this.showAnswer = true;
+        this.message = `
+          <b>Correct Gender:</b> ${genderKey}<br>
+          <b>Correct Answer:</b> ${this.correctAnswer}<br>
+        `
       },
       setupNextQuestion() {
         this.pickRandomQuestion();
@@ -203,7 +167,7 @@ const app = Vue.createApp({
         this.showAnswer = false;
         this.message = null;
       },
-      extractAllValues() {
+      extractAllValues(answer) {
         const values = [];
         for (const roomKey in this.currentData) {
           const room = this.currentData[roomKey];
@@ -211,21 +175,22 @@ const app = Vue.createApp({
             const category = room[categoryKey];
             for (const itemKey in category) {
               const item = category[itemKey];
-              for (const genderKey in item) {
-                const object = item[genderKey];
-                const answers = Object.values(object);
 
-                for (const answer of answers) {
-                  if (answer !== null) {
-                    values.push(answer);
-                  }
+              for (const genderKey in item) {
+                const spanishValue = item[genderKey]['spanish'];
+
+                if (spanishValue !== answer) {
+                  values.push(spanishValue);
                 }
               }
             }
           }
         }
         const mixedValues = values.sort(() => Math.random() - 0.5);
-        return mixedValues.splice(0,3);
+        const allAnswerOptions = mixedValues.splice(0,3)
+        allAnswerOptions.push(answer)
+        const userOptions = allAnswerOptions.sort(() => Math.random() - 0.5);
+        return userOptions;
       },
     }
 });

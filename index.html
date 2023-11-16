@@ -26,52 +26,67 @@
     <!-- Category Selection -->
     <div v-if="!selectedCategory">
       <p>Pick a category!</p>
-      <button v-for="category in Object.keys(currentData)" :key="category" @click="selectCategory(category)">
-        {{ category }}
-      </button>
+
+      <div class="button-container">
+        <button v-for="category in Object.keys(currentData)" :key="category" class="btn btn-primary" @click="selectCategory(category)">
+          {{ category }}
+        </button>
+      </div>
     </div>
 
     <!-- Subcategory Selection -->
     <div v-if="selectedCategory && !selectedSubcategory">
       <p>Pick a category!</p>
-      <button v-for="subcategory in Object.keys(currentData[selectedCategory])" :key="subcategory" @click="selectSubcategory(subcategory)">
-        {{ subcategory }}
-      </button>
+
+      <div class="button-container">
+        <button v-for="subcategory in Object.keys(currentData[selectedCategory])" :key="subcategory" class="btn btn-primary" @click="selectSubcategory(subcategory)">
+          {{ subcategory.replace('_', ' ') }}
+        </button>
+      </div>
     </div>
 
     <!-- Final Category Selection -->
     <div v-if="selectedSubcategory && !selectedFinalCategory">
       <p>Pick a category!</p>
-      <button v-for="finalCategory in Object.keys(currentData[selectedCategory][selectedSubcategory])" :key="finalCategory" @click="selectFinalCategory(finalCategory)">
-        {{ finalCategory }}
-      </button>
+
+      <div class="button-container">
+        <button v-for="finalCategory in Object.keys(currentData[selectedCategory][selectedSubcategory])" :key="finalCategory" class="btn btn-primary" @click="selectFinalCategory(finalCategory)">
+          {{ finalCategory.replace('_', ' ') }}
+        </button>
+      </div>
     </div>
 
     <!-- Question Display -->
     <div v-if="randomQuestion">
-      <p>What is "{{ randomQuestion }}" translated into english?<p>
+      <p class="p-3">What is "{{ questions[randomQuestion]['english'] }}" translated into spanish?<p>
 
-      <button v-for="option in answerOptions" :key="option" class="btn btn-info">
-        {{ option }}
-      </button>
+      <div class="button-container">
+        <button v-for="option in answerOptions" :key="option" :class="randomAnswerValue == option && showAnswer ? 'correct' : ''" @click="checkAnswer(option)">
+          {{ option.replace('_', ' ') }}
+        </button>
+      </div>
 
       <div v-if="showAnswer">
         <p :class="correct ? 'correct' : 'incorrect'">{{ correct ? 'Correct!' : 'Incorrect.' }}</p>
       </div>
     </div>
 
-    <!-- Next Question -->
-    <button @click="setupNextQuestion" v-if="showAnswer">Next Question</button>
+    <hr>
 
-    <!-- Reset Button -->
-    <button @click="resetSelection">Select New Category</button>
+    <!-- Next Question -->
+    <div class="button-container">
+      <button @click="resetSelection" class="btn btn-warning">Select New Category</button>
+
+      <button @click="setupNextQuestion" v-if="showAnswer" class="btn btn-primary">Next Question</button>
+    </div>
   </div>
 
     <!-- Import the app -->
+    <script src="assets/data/kitchen/kitchen_tools.js"></script>
+    <script src="assets/data/kitchen/kitchen_furniture.js"></script>
     <script src="assets/javascript/app.js"></script>
 
-    <!-- Import components -->
-    <!-- <script src="assets/components/Character.js"></script> -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
     <!-- JavaScript Bundle with Popper -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8" crossorigin="anonymous"></script>
