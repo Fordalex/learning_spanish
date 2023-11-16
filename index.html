@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- CSS only -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
+    <link rel="stylesheet" href="assets/styles/style.css">
+    <script src="https://unpkg.com/vue@3"></script>
+    <link rel="icon" type="image/x-icon" href="assets/images/logo.png">
+    <title>Spanish Questions</title>
+</head>
+<body>
+
+  <div id="app">
+    <!-- Category Selection -->
+    <div v-if="!selectedCategory">
+      <button v-for="category in Object.keys(currentData)" :key="category" @click="selectCategory(category)">
+        {{ category }}
+      </button>
+    </div>
+
+    <!-- Subcategory Selection -->
+    <div v-if="selectedCategory && !selectedSubcategory">
+      <button v-for="subcategory in Object.keys(currentData[selectedCategory])" :key="subcategory" @click="selectSubcategory(subcategory)">
+        {{ subcategory }}
+      </button>
+    </div>
+
+    <!-- Final Category Selection -->
+    <div v-if="selectedSubcategory && !selectedFinalCategory">
+      <button v-for="finalCategory in Object.keys(currentData[selectedCategory][selectedSubcategory])" :key="finalCategory" @click="selectFinalCategory(finalCategory)">
+        {{ finalCategory }}
+      </button>
+    </div>
+
+    <!-- Question Display -->
+    <div v-if="randomQuestion">
+      <p>What is the {{ userAnswer.gender }} form of "{{ randomQuestion }}"?</p>
+      <button v-for="gender in ['Masculine', 'Feminine', 'Neutral']" :key="gender" @click="chooseGender(gender)">
+        {{ gender }}
+      </button>
+      <input type="text" v-model="userAnswer.translation">
+      <button @click="checkAnswer">Submit</button>
+
+      <div v-if="showAnswer">
+        <p>{{ correct ? 'Correct!' : 'Incorrect.' }} The correct answer is: {{ correctAnswer }}</p>
+      </div>
+    </div>
+
+    <!-- Reset Button -->
+    <button @click="resetSelection">Reset</button>
+  </div>
+
+    <!-- Import the app -->
+    <script src="assets/javascript/app.js"></script>
+
+    <!-- Import components -->
+    <!-- <script src="assets/components/Character.js"></script> -->
+
+    <!-- JavaScript Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8" crossorigin="anonymous"></script>
+
+    <script>
+        const mountedApp = app.mount("#app");
+
+    </script>
+</body>
+</html>
