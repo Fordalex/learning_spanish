@@ -5,82 +5,17 @@ const data = {
       "kitchen_furniture": window.kitchenFurniture
     },
     "living_room": {
-      "furniture": [
-        {
-          "english": "sofa",
-          "spanish": "sofá",
-          "gender": "feminine"
-        },
-        {
-          "english": "coffee table",
-          "spanish": "mesa de centro",
-          "gender": "feminine"
-        }
-      ],
-      "decorations": [
-        {
-          "english": "painting",
-          "spanish": "cuadro",
-          "gender": "masculine"
-        },
-        {
-          "english": "vase",
-          "spanish": "jarrón",
-          "gender": "feminine"
-        }
-      ]
+      "furniture": window.livingroomFurniture,
+      "actions": window.livingroomActions,
+      "decorations": window.livingroomDecorations,
     },
     "bedroom": {
-      "furniture": [
-        {
-          "english": "bed",
-          "spanish": "cama",
-          "gender": "masculine"
-        },
-        {
-          "english": "wardrobe",
-          "spanish": "armario",
-          "gender": "masculine"
-        }
-      ],
-      "linen": [
-        {
-          "english": "pillow",
-          "spanish": "almohada",
-          "gender": "feminine"
-        },
-        {
-          "english": "blanket",
-          "spanish": "manta",
-          "gender": "feminine"
-        }
-      ]
+      "furniture": window.bedroomFurniture,
+      "linen": window.bedroomLinen,
     },
     "bathroom": {
-      "fixtures": [
-        {
-          "english": "sink",
-          "spanish": "lavabo",
-          "gender": "feminine"
-        },
-        {
-          "english": "toilet",
-          "spanish": "inodoro",
-          "gender": "masculine"
-        }
-      ],
-      "accessories": [
-        {
-          "english": "towel",
-          "spanish": "toalla",
-          "gender": "feminine"
-        },
-        {
-          "english": "soap",
-          "spanish": "jabón",
-          "gender": "feminine"
-        }
-      ]
+      "fixtures": window.bathroomFixtures,
+      "accessories": window.bathroomAccessories
     }
   }
 }

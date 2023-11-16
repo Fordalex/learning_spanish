@@ -1,6 +1,9 @@
-.correct {
-  background-color: greenyellow;
+.correct,
+.correct:focus,
+.correct:active {
+  background-color: greenyellow !important;
 }
+
 
 .incorrect {
   background-color: red;
