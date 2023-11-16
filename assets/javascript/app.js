@@ -125,6 +125,7 @@ const app = Vue.createApp({
         selectedSubcategory: null,
         selectedFinalCategory: null,
         questions: [],
+        answerOptions: [],
         randomQuestion: null,
         randomValue: null,
         userAnswer: {
@@ -133,7 +134,8 @@ const app = Vue.createApp({
         },
         correct: false,
         showAnswer: false,
-        correctAnswer: null
+        correctAnswer: null,
+        message: null,
       };
     },
     methods: {
@@ -153,6 +155,7 @@ const app = Vue.createApp({
         this.pickRandomQuestion();
       },
       pickRandomQuestion() {
+        this.answerOptions = this.extractAllValues()
         const questionKeys = Object.keys(this.questions);
         const randomKey = questionKeys[Math.floor(Math.random() * questionKeys.length)];
         this.randomQuestion = randomKey;
@@ -174,18 +177,20 @@ const app = Vue.createApp({
           console.log(this.randomValue)
           this.correctAnswer = this.randomValue[genderKey];
           this.showAnswer = true;
-
-          // Setup the next question after a short delay
-          setTimeout(() => {
-              this.setupNextQuestion();
-          }, 10000); // delay of 2 seconds
+          this.message = `
+            <b>Correct Gender:</b> ${genderKey}<br>
+            <b>Correct Answer:</b> ${this.correctAnswer}<br>
+          `
+        } else {
+          this.message = "Please answer the question."
         }
       },
       setupNextQuestion() {
-          this.pickRandomQuestion();
-          this.userAnswer = { gender: null, translation: null };
-          this.showAnswer = false;
-          this.correct = null;
+        this.pickRandomQuestion();
+        this.userAnswer = { gender: null, translation: null };
+        this.showAnswer = false;
+        this.correct = null;
+        this.message = null;
       },
       resetSelection() {
         this.selectedCategory = null;
@@ -195,6 +200,32 @@ const app = Vue.createApp({
         this.randomQuestion = null;
         this.userAnswer = { gender: null, translation: null };
         this.correct = false;
-      }
+        this.showAnswer = false;
+        this.message = null;
+      },
+      extractAllValues() {
+        const values = [];
+        for (const roomKey in this.currentData) {
+          const room = this.currentData[roomKey];
+          for (const categoryKey in room) {
+            const category = room[categoryKey];
+            for (const itemKey in category) {
+              const item = category[itemKey];
+              for (const genderKey in item) {
+                const object = item[genderKey];
+                const answers = Object.values(object);
+
+                for (const answer of answers) {
+                  if (answer !== null) {
+                    values.push(answer);
+                  }
+                }
+              }
+            }
+          }
+        }
+        const mixedValues = values.sort(() => Math.random() - 0.5);
+        return mixedValues.splice(0,3);
+      },
     }
 });

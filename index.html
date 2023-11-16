@@ -14,8 +14,18 @@
 <body>
 
   <div id="app">
+    <header class="d-flex justify-content-center align-items-center gap-1">
+      <img src="./assets/images/spain.png">
+      <h1>Spanish</h1>
+    </header>
+
+    <div v-if="message">
+      <p v-html="message"></p>
+    </div>
+
     <!-- Category Selection -->
     <div v-if="!selectedCategory">
+      <p>Pick a category!</p>
       <button v-for="category in Object.keys(currentData)" :key="category" @click="selectCategory(category)">
         {{ category }}
       </button>
@@ -23,6 +33,7 @@
 
     <!-- Subcategory Selection -->
     <div v-if="selectedCategory && !selectedSubcategory">
+      <p>Pick a category!</p>
       <button v-for="subcategory in Object.keys(currentData[selectedCategory])" :key="subcategory" @click="selectSubcategory(subcategory)">
         {{ subcategory }}
       </button>
@@ -30,6 +41,7 @@
 
     <!-- Final Category Selection -->
     <div v-if="selectedSubcategory && !selectedFinalCategory">
+      <p>Pick a category!</p>
       <button v-for="finalCategory in Object.keys(currentData[selectedCategory][selectedSubcategory])" :key="finalCategory" @click="selectFinalCategory(finalCategory)">
         {{ finalCategory }}
       </button>
@@ -37,20 +49,22 @@
 
     <!-- Question Display -->
     <div v-if="randomQuestion">
-      <p>What is the {{ userAnswer.gender }} form of "{{ randomQuestion }}"?</p>
-      <button v-for="gender in ['Masculine', 'Feminine', 'Neutral']" :key="gender" @click="chooseGender(gender)">
-        {{ gender }}
+      <p>What is "{{ randomQuestion }}" translated into english?<p>
+
+      <button v-for="option in answerOptions" :key="option" class="btn btn-info">
+        {{ option }}
       </button>
-      <input type="text" v-model="userAnswer.translation">
-      <button @click="checkAnswer">Submit</button>
 
       <div v-if="showAnswer">
-        <p>{{ correct ? 'Correct!' : 'Incorrect.' }} The correct answer is: {{ correctAnswer }}</p>
+        <p :class="correct ? 'correct' : 'incorrect'">{{ correct ? 'Correct!' : 'Incorrect.' }}</p>
       </div>
     </div>
 
+    <!-- Next Question -->
+    <button @click="setupNextQuestion" v-if="showAnswer">Next Question</button>
+
     <!-- Reset Button -->
-    <button @click="resetSelection">Reset</button>
+    <button @click="resetSelection">Select New Category</button>
   </div>
 
     <!-- Import the app -->
