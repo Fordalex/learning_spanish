@@ -51,6 +51,14 @@ const data = {
     "tv": {
       "actions": window.tvActionsConversations,
     }
+  },
+  "myself": {
+    "items": {
+      "personal_belongings": window.myselfItemsPersonalBelongings,
+    },
+    "emotions": {
+      "common": window.myselfEmotionsCommonEmotions,
+    }
   }
 }
 
