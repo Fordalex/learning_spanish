@@ -23,6 +23,23 @@
       <p v-html="message"></p>
     </div>
 
+    <div class="d-flex justify-content-around">
+      <button @click="selectDificulty(3)" :class="dificulty == 3 ? 'btn btn-primary' : 'btn btn-secondary'">Easy</button>
+      <button @click="selectDificulty(5)" :class="dificulty == 5 ? 'btn btn-primary' : 'btn btn-secondary'">Medium</button>
+      <button @click="selectDificulty(7)" :class="dificulty == 7 ? 'btn btn-primary' : 'btn btn-secondary'">Hard</button>
+    </div>
+
+    <hr>
+
+    <!-- Selected Categories -->
+    <div class="d-flex justify-content-around title-case">
+      <div>{{ selectedCategory }}</div>
+      <div>{{ selectedSubcategory }}</div>
+      <div>{{ selectedFinalCategory }}</div>
+    </div>
+
+    <hr>
+
     <!-- Category Selection -->
     <div v-if="!selectedCategory">
       <p class="p-3">Pick a category!</p>

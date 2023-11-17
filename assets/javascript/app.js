@@ -46,6 +46,7 @@ const app = Vue.createApp({
     data() {
       return {
         currentData: data,
+        dificulty: 3,
         selectedCategory: null,
         selectedSubcategory: null,
         selectedFinalCategory: null,
@@ -61,6 +62,10 @@ const app = Vue.createApp({
       };
     },
     methods: {
+      selectDificulty(num) {
+        this.dificulty = num;
+        this.answerOptions = this.extractAllValues(this.randomAnswerValue)
+      },
       selectCategory(category) {
         this.resetSelection();
         this.selectedCategory = category;
@@ -144,7 +149,7 @@ const app = Vue.createApp({
           }
         }
         const mixedValues = values.sort(() => Math.random() - 0.5);
-        const allAnswerOptions = mixedValues.splice(0,3)
+        const allAnswerOptions = mixedValues.splice(0,this.dificulty)
         allAnswerOptions.push(answer)
         const userOptions = allAnswerOptions.sort(() => Math.random() - 0.5);
         return userOptions;

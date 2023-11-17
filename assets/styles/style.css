@@ -19,3 +19,7 @@
 button {
   text-transform: capitalize;
 }
+
+.title-case {
+  text-transform: capitalize;
+}
