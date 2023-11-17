@@ -1,75 +1,75 @@
 const data = {
-  "house | fa-house-user": {  // Updated icon class
+  "house | fa-house-user": {
     "kitchen | fa-utensils": {
-      "kitchen_tools | fa-blender": window.kitchenTools,  // Example icon class
-      "kitchen_furniture | fa-chair": window.kitchenFurniture  // Example icon class
+      "kitchen_tools | fa-blender": window.kitchenTools,
+      "kitchen_furniture | fa-chair": window.kitchenFurniture
     },
-    "living_room | fa-couch": {  // Updated icon class
-      "furniture | fa-chair-office": window.livingroomFurniture,  // Example icon class
-      "actions | fa-users": window.livingroomActions,  // Example icon class
-      "decorations | fa-paint-roller": window.livingroomDecorations,  // Example icon class
+    "living_room | fa-couch": {
+      "furniture | fa-chair-office": window.livingroomFurniture,
+      "actions | fa-users": window.livingroomActions,
+      "decorations | fa-paint-roller": window.livingroomDecorations,
     },
     "bedroom | fa-bed": {
-      "furniture | fa-wardrobe": window.bedroomFurniture,  // Example icon class
-      "linen | fa-blanket": window.bedroomLinen,  // Example icon class
+      "furniture | fa-wardrobe": window.bedroomFurniture,
+      "linen | fa-blanket": window.bedroomLinen,
     },
     "bathroom | fa-bath": {
-      "fixtures | fa-shower": window.bathroomFixtures,  // Example icon class
-      "accessories | fa-soap": window.bathroomAccessories  // Example icon class
+      "fixtures | fa-shower": window.bathroomFixtures,
+      "accessories | fa-soap": window.bathroomAccessories
     },
-    "garage | fa-garage-car": {  // Updated icon class
-      "fixtures | fa-tools": window.garageFixtures  // Example icon class
+    "garage | fa-warehouse": {
+      "fixtures | fa-tools": window.garageFixtures
     }
   },
-  "nature | fa-leaf": {  // Updated icon class
+  "nature | fa-leaf": {
     "park | fa-tree": {
-      "facilities | fa-bench": window.parkFacilities,  // Example icon class
-      "activities | fa-football": window.parkActivities,  // Example icon class
-      "wildlife | fa-dove": window.parkWildlife  // Example icon class
+      "facilities | fa-bench": window.parkFacilities,
+      "activities | fa-football": window.parkActivities,
+      "wildlife | fa-dove": window.parkWildlife
     }
   },
   "restaurant | fa-utensils": {
-    "menu | fa-book-open": {  // Example icon class
-      "appetizers | fa-seedling": window.menuAppetizers,  // Example icon class
-      "main_courses | fa-drumstick-bite": window.menuMainCourses,  // Example icon class
-      "desserts | fa-ice-cream": window.menuDesserts,  // Example icon class
-      "beverages | fa-coffee": window.menuBeverages  // Example icon class
+    "menu | fa-book-open": {
+      "appetizers | fa-seedling": window.menuAppetizers,
+      "main_courses | fa-drumstick-bite": window.menuMainCourses,
+      "desserts | fa-ice-cream": window.menuDesserts,
+      "beverages | fa-coffee": window.menuBeverages
     },
-    "customer_experience | fa-smile-beam": {  // Updated icon class
-      "reservations | fa-calendar-check": window.customerExperienceReservations,  // Example icon class
-      "customer_service | fa-headset": window.customerExperienceCustomerService  // Example icon class
+    "customer_experience | fa-smile-beam": {
+      "reservations | fa-calendar-check": window.customerExperienceReservations,
+      "customer_service | fa-headset": window.customerExperienceCustomerService
     }
   },
-  "conversations | fa-comments": {  // Updated icon class
-    "food | fa-hamburger": {  // Example icon class
-      "eating | fa-utensils-alt": window.foodEatingConversations,  // Example icon class
-      "cooking | fa-blender": window.foodCookingConversations,  // Example icon class
+  "conversations | fa-comments": {
+    "food | fa-hamburger": {
+      "eating | fa-utensils-alt": window.foodEatingConversations,
+      "cooking | fa-blender": window.foodCookingConversations,
     },
-    "travel | fa-plane": {  // Example icon class
-      "public_transport | fa-bus": window.travelPublicTransport,  // Example icon class
+    "travel | fa-plane": {
+      "public_transport | fa-bus": window.travelPublicTransport,
     },
     "tv | fa-tv": {
-      "actions | fa-play": window.tvActionsConversations,  // Example icon class
+      "actions | fa-play": window.tvActionsConversations,
     },
-    "general | fa-globe": {  // Example icon class
-      "quantitive_adjectives | fa-balance-scale": window.qualitativeAdjectives  // Example icon class
+    "general | fa-globe": {
+      "quantitive_adjectives | fa-balance-scale": window.qualitativeAdjectives
     }
   },
-  "myself | fa-user-alt": {  // Updated icon class
-    "items | fa-backpack": {  // Example icon class
-      "personal_belongings | fa-glasses": window.myselfItemsPersonalBelongings,  // Example icon class
+  "myself | fa-user-alt": {
+    "items | fa-backpack": {
+      "personal_belongings | fa-glasses": window.myselfItemsPersonalBelongings,
     },
-    "emotions | fa-heartbeat": {  // Example icon class
-      "common | fa-smile": window.myselfEmotionsCommonEmotions,  // Example icon class
+    "emotions | fa-heartbeat": {
+      "common | fa-smile": window.myselfEmotionsCommonEmotions,
     },
-    "senses | fa-brain": {  // Example icon class
-      "common | fa-eye": window.myselfSensesCommonSenses  // Example icon class
+    "senses | fa-brain": {
+      "common | fa-eye": window.myselfSensesCommonSenses
     }
   },
   "education | fa-graduation-cap": {
-    "nursery | fa-baby-carriage": {  // Example icon class
-      "numbers | fa-sort-numeric-up": window.educationNurseryNumbers,  // Example icon class
-      "shapes | fa-shapes": window.shapes  // Example icon class
+    "nursery | fa-baby-carriage": {
+      "numbers | fa-sort-numeric-up": window.educationNurseryNumbers,
+      "shapes | fa-shapes": window.shapes
     }
   }
 }
