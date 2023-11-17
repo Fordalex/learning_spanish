@@ -33,9 +33,18 @@
 
     <!-- Selected Categories -->
     <div class="d-flex justify-content-around title-case">
-      <div>{{ selectedCategory }}</div>
-      <div>{{ selectedSubcategory }}</div>
-      <div>{{ selectedFinalCategory }}</div>
+      <div>
+        <i :class="`fa-solid ${categoryFormatter(selectedCategory, 'icon')}`"></i>
+        {{ categoryFormatter(selectedCategory, 'word') }}
+      </div>
+      <div>
+        <i :class="`fa-solid ${categoryFormatter(selectedSubcategory, 'icon')}`"></i>
+        {{ categoryFormatter(selectedSubcategory, 'word') }}
+      </div>
+      <div>
+        <i :class="`fa-solid ${categoryFormatter(selectedFinalCategory, 'icon')}`"></i>
+        {{ categoryFormatter(selectedFinalCategory, 'word') }}
+      </div>
     </div>
 
     <hr>
@@ -46,7 +55,8 @@
 
       <div class="button-container">
         <button v-for="category in Object.keys(currentData)" :key="category" class="btn btn-primary" @click="selectCategory(category)">
-          {{ category }}
+          <i :class="`fa-solid ${categoryFormatter(category, 'icon')}`"></i>
+          {{  categoryFormatter(category, 'word') }}
         </button>
       </div>
     </div>
@@ -57,7 +67,8 @@
 
       <div class="button-container">
         <button v-for="subcategory in Object.keys(currentData[selectedCategory])" :key="subcategory" class="btn btn-primary" @click="selectSubcategory(subcategory)">
-          {{ subcategory.replace('_', ' ') }}
+          <i :class="`fa-solid ${categoryFormatter(subcategory, 'icon')}`"></i>
+          {{  categoryFormatter(subcategory, 'word') }}
         </button>
       </div>
     </div>
@@ -68,7 +79,8 @@
 
       <div class="button-container">
         <button v-for="finalCategory in Object.keys(currentData[selectedCategory][selectedSubcategory])" :key="finalCategory" class="btn btn-primary" @click="selectFinalCategory(finalCategory)">
-          {{ finalCategory.replace('_', ' ') }}
+          <i :class="`fa-solid ${categoryFormatter(finalCategory, 'icon')}`"></i>
+          {{ categoryFormatter(finalCategory, 'word') }}
         </button>
       </div>
     </div>
@@ -104,6 +116,9 @@
     <script src="assets/data/conversations/travel/travelPublicTransport.js"></script>
     <script src="assets/data/conversations/tv/tvActions.js"></script>
     <script src="assets/data/conversations/general/quantitiveAdjectives.js"></script>
+
+    <script src="assets/data/education/nursery/numbers.js"></script>
+    <script src="assets/data/education/nursery/shapes.js"></script>
 
     <script src="assets/data/house/bathroom/bathroomFixtures.js"></script>
     <script src="assets/data/house/bathroom/bathroomAccessories.js"></script>

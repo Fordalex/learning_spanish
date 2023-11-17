@@ -1,69 +1,75 @@
 const data = {
-  "house": {
-    "kitchen": {
-      "kitchen_tools": window.kitchenTools,
-      "kitchen_furniture": window.kitchenFurniture
+  "house | fa-house-user": {  // Updated icon class
+    "kitchen | fa-utensils": {
+      "kitchen_tools | fa-blender": window.kitchenTools,  // Example icon class
+      "kitchen_furniture | fa-chair": window.kitchenFurniture  // Example icon class
     },
-    "living_room": {
-      "furniture": window.livingroomFurniture,
-      "actions": window.livingroomActions,
-      "decorations": window.livingroomDecorations,
+    "living_room | fa-couch": {  // Updated icon class
+      "furniture | fa-chair-office": window.livingroomFurniture,  // Example icon class
+      "actions | fa-users": window.livingroomActions,  // Example icon class
+      "decorations | fa-paint-roller": window.livingroomDecorations,  // Example icon class
     },
-    "bedroom": {
-      "furniture": window.bedroomFurniture,
-      "linen": window.bedroomLinen,
+    "bedroom | fa-bed": {
+      "furniture | fa-wardrobe": window.bedroomFurniture,  // Example icon class
+      "linen | fa-blanket": window.bedroomLinen,  // Example icon class
     },
-    "bathroom": {
-      "fixtures": window.bathroomFixtures,
-      "accessories": window.bathroomAccessories
+    "bathroom | fa-bath": {
+      "fixtures | fa-shower": window.bathroomFixtures,  // Example icon class
+      "accessories | fa-soap": window.bathroomAccessories  // Example icon class
     },
-    "garage": {
-      "fixtures": window.garageFixtures
+    "garage | fa-garage-car": {  // Updated icon class
+      "fixtures | fa-tools": window.garageFixtures  // Example icon class
     }
   },
-  "nature": {
-    "park": {
-      "facilities": window.parkFacilities,
-      "activities": window.parkActivities,
-      "wildlife": window.parkWildlife
+  "nature | fa-leaf": {  // Updated icon class
+    "park | fa-tree": {
+      "facilities | fa-bench": window.parkFacilities,  // Example icon class
+      "activities | fa-football": window.parkActivities,  // Example icon class
+      "wildlife | fa-dove": window.parkWildlife  // Example icon class
     }
   },
-  "restaurant": {
-    "menu": {
-      "appetizers": window.menuAppetizers,
-      "main_courses": window.menuMainCourses,
-      "desserts": window.menuDesserts,
-      "beverages": window.menuBeverages
+  "restaurant | fa-utensils": {
+    "menu | fa-book-open": {  // Example icon class
+      "appetizers | fa-seedling": window.menuAppetizers,  // Example icon class
+      "main_courses | fa-drumstick-bite": window.menuMainCourses,  // Example icon class
+      "desserts | fa-ice-cream": window.menuDesserts,  // Example icon class
+      "beverages | fa-coffee": window.menuBeverages  // Example icon class
     },
-    "customer_experience": {
-      "reservations": window.customerExperienceReservations,
-      "customer_service": window.customerExperienceCustomerService
+    "customer_experience | fa-smile-beam": {  // Updated icon class
+      "reservations | fa-calendar-check": window.customerExperienceReservations,  // Example icon class
+      "customer_service | fa-headset": window.customerExperienceCustomerService  // Example icon class
     }
   },
-  "conversations": {
-    "food": {
-      "eating": window.foodEatingConversations,
-      "cooking": window.foodCookingConversations,
+  "conversations | fa-comments": {  // Updated icon class
+    "food | fa-hamburger": {  // Example icon class
+      "eating | fa-utensils-alt": window.foodEatingConversations,  // Example icon class
+      "cooking | fa-blender": window.foodCookingConversations,  // Example icon class
     },
-    "travel": {
-      "public_transport": window.travelPublicTransport,
+    "travel | fa-plane": {  // Example icon class
+      "public_transport | fa-bus": window.travelPublicTransport,  // Example icon class
     },
-    "tv": {
-      "actions": window.tvActionsConversations,
+    "tv | fa-tv": {
+      "actions | fa-play": window.tvActionsConversations,  // Example icon class
     },
-    "general": {
-      "quantitive_adjectives": window.qualitativeAdjectives
+    "general | fa-globe": {  // Example icon class
+      "quantitive_adjectives | fa-balance-scale": window.qualitativeAdjectives  // Example icon class
     }
   },
-  "myself": {
-    "items": {
-      "personal_belongings": window.myselfItemsPersonalBelongings,
+  "myself | fa-user-alt": {  // Updated icon class
+    "items | fa-backpack": {  // Example icon class
+      "personal_belongings | fa-glasses": window.myselfItemsPersonalBelongings,  // Example icon class
     },
-    "emotions": {
-      "common": window.myselfEmotionsCommonEmotions,
+    "emotions | fa-heartbeat": {  // Example icon class
+      "common | fa-smile": window.myselfEmotionsCommonEmotions,  // Example icon class
     },
-    "senses": {
-      "common": window.myselfSensesCommonSenses
+    "senses | fa-brain": {  // Example icon class
+      "common | fa-eye": window.myselfSensesCommonSenses  // Example icon class
+    }
+  },
+  "education | fa-graduation-cap": {
+    "nursery | fa-baby-carriage": {  // Example icon class
+      "numbers | fa-sort-numeric-up": window.educationNurseryNumbers,  // Example icon class
+      "shapes | fa-shapes": window.shapes  // Example icon class
     }
   }
 }
@@ -88,6 +94,17 @@ const app = Vue.createApp({
       };
     },
     methods: {
+      categoryFormatter(category, type) {
+        if (!category) { return }
+
+        const items = category.split('|')
+
+        if (type === 'word') {
+          return items[0]
+        } else if (type === 'icon') {
+          return items[1]
+        }
+      },
       selectDificulty(num) {
         this.dificulty = num;
         this.answerOptions = this.extractAllValues(this.randomAnswerValue)
