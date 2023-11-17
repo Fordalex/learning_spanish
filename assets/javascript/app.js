@@ -50,6 +50,9 @@ const data = {
     },
     "tv": {
       "actions": window.tvActionsConversations,
+    },
+    "general": {
+      "quantitive_adjectives": window.qualitativeAdjectives
     }
   },
   "myself": {
@@ -58,6 +61,9 @@ const data = {
     },
     "emotions": {
       "common": window.myselfEmotionsCommonEmotions,
+    },
+    "senses": {
+      "common": window.myselfSensesCommonSenses
     }
   }
 }
