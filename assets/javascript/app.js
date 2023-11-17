@@ -39,6 +39,18 @@ const data = {
       "reservations": window.customerExperienceReservations,
       "customer_service": window.customerExperienceCustomerService
     }
+  },
+  "conversations": {
+    "food": {
+      "eating": window.foodEatingConversations,
+      "cooking": window.foodCookingConversations,
+    },
+    "travel": {
+      "public_transport": window.travelPublicTransport,
+    },
+    "tv": {
+      "actions": window.tvActionsConversations,
+    }
   }
 }
 
