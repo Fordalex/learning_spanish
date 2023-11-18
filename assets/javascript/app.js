@@ -19,11 +19,14 @@ const data = {
     },
     "garage | fa-warehouse": {
       "fixtures | fa-tools": window.garageFixtures
+    },
+    "all": {
+      "rooms | fa-square": window.houseRooms
     }
   },
   "nature | fa-leaf": {
     "park | fa-tree": {
-      "facilities | fa-bench": window.parkFacilities,
+      "facilities | fa-landmark": window.parkFacilities,
       "activities | fa-football": window.parkActivities,
       "wildlife | fa-dove": window.parkWildlife
     }
@@ -69,7 +72,8 @@ const data = {
   "education | fa-graduation-cap": {
     "nursery | fa-baby-carriage": {
       "numbers | fa-sort-numeric-up": window.educationNurseryNumbers,
-      "shapes | fa-shapes": window.shapes
+      "shapes | fa-shapes": window.shapes,
+      "colours | fa-droplet": window.educationNurseryColors
     }
   }
 }

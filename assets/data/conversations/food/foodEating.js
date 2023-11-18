@@ -40,9 +40,39 @@ const foodEatingConversations = [
     "gender": "neutral"
   },
   {
-      "english": "My food looks good",
-      "spanish": "Mi comida se ve bien",
-      "gender": "neutral"
+    "english": "My food looks good",
+    "spanish": "Mi comida se ve bien",
+    "gender": "neutral"
+  },
+  {
+    "english": "Do we have leftovers?",
+    "spanish": "¿Tenemos sobras?",
+    "gender": "neutral"
+  },
+  {
+    "english": "Can you tub up the remaining food, please?",
+    "spanish": "¿Puedes guardar la comida restante en un recipiente, por favor?",
+    "gender": "neutral"
+  },
+  {
+    "english": "I'm full",
+    "spanish": "Estoy lleno",
+    "gender": "masculine"
+  },
+  {
+    "english": "I'm not hungry",
+    "spanish": "No tengo hambre",
+    "gender": "neutral"
+  },
+  {
+    "english": "I'm very hungry",
+    "spanish": "Tengo mucha hambre",
+    "gender": "neutral"
+  },
+  {
+    "english": "Are you enjoying your dinner?",
+    "spanish": "¿Estás disfrutando tu cena?",
+    "gender": "neutral"
   }
 ];
 
