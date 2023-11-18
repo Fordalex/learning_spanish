@@ -1,7 +1,7 @@
 const foodEatingConversations = [
   {
-    "english": "My dinner is delicious tonight, isn't it?",
-    "spanish": "Mi cena está deliciosa esta noche, ¿verdad?",
+    "english": "My dinner is delicious tonight",
+    "spanish": "Mi cena está deliciosa esta noche",
     "gender": "masculine"
   },
   {
@@ -20,16 +20,6 @@ const foodEatingConversations = [
     "gender": "masculine"
   },
   {
-    "english": "Isn't it satisfying to savor a perfectly cooked steak?",
-    "spanish": "¿No es satisfactorio saborear un filete perfectamente cocido?",
-    "gender": "masculine"
-  },
-  {
-    "english": "Do you agree that homemade meals are the best?",
-    "spanish": "¿Estás de acuerdo en que las comidas caseras son las mejores?",
-    "gender": "masculine"
-  },
-  {
     "english": "Isn't it great to enjoy a meal with friends and family?",
     "spanish": "¿No es genial disfrutar de una comida con amigos y familia?",
     "gender": "masculine"
@@ -40,14 +30,19 @@ const foodEatingConversations = [
     "gender": "masculine"
   },
   {
-    "english": "Isn't it a treat to have your favorite food on a special occasion?",
-    "spanish": "¿No es un placer tener tu comida favorita en una ocasión especial?",
-    "gender": "masculine"
+    "english": "Are we having dessert tonight?",
+    "spanish": "¿Vamos a tener postre esta noche?",
+    "gender": "neutral"
   },
   {
-    "english": "Do you ever crave a midnight snack?",
-    "spanish": "¿Alguna vez tienes antojo de un bocadillo a medianoche?",
-    "gender": "masculine"
+    "english": "The food smells nice",
+    "spanish": "La comida huele bien",
+    "gender": "neutral"
+  },
+  {
+      "english": "My food looks good",
+      "spanish": "Mi comida se ve bien",
+      "gender": "neutral"
   }
 ];
 
