@@ -55,7 +55,8 @@ const data = {
       "actions | fa-play": window.tvActionsConversations,
     },
     "general | fa-globe": {
-      "quantitive_adjectives | fa-balance-scale": window.qualitativeAdjectives
+      "quantitive_adjectives | fa-balance-scale": window.qualitativeAdjectives,
+      "sentence_starters | fa-flag-checkered": window.sentenceStarters
     }
   },
   "myself | fa-user-alt": {
@@ -104,7 +105,7 @@ const app = Vue.createApp({
         const items = category.split('|')
 
         if (type === 'word') {
-          return items[0]
+          return items[0].replace('_', ' ')
         } else if (type === 'icon') {
           return items[1]
         }
