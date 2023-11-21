@@ -74,7 +74,8 @@ const data = {
     "nursery | fa-baby-carriage": {
       "numbers | fa-sort-numeric-up": window.educationNurseryNumbers,
       "shapes | fa-shapes": window.shapes,
-      "colours | fa-droplet": window.educationNurseryColors
+      "colours | fa-droplet": window.educationNurseryColors,
+      "body_parks | fa-child": window.educationNurseryBodyParts,
     }
   }
 }
@@ -152,6 +153,11 @@ const app = Vue.createApp({
         } else {
           this.correct = false;
         }
+
+        var msg = new SpeechSynthesisUtterance();
+        msg.text = this.randomAnswerValue;
+        msg.lang = "es-ES";
+        window.speechSynthesis.speak(msg);
 
         this.showAnswer = true;
         this.message = `
