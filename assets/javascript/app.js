@@ -68,6 +68,9 @@ const data = {
     },
     "senses | fa-brain": {
       "common | fa-eye": window.myselfSensesCommonSenses
+    },
+    "phrases": {
+      "sentance_starters | fa-comments": window.myselfSentenceStarters
     }
   },
   "education | fa-graduation-cap": {
