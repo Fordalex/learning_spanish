@@ -10,3 +10,5 @@ Here is your phone
 
 
 ## Facial expressions
+
+## Hair colours
