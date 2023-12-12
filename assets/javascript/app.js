@@ -1,4 +1,14 @@
 const data = {
+  "descriptive": {
+    "sensory_adjectives | fa-brain": {
+      "smell_adjectives | fa-nose": window.basicSmellAdjectives,
+      "sight_adjectives | fa-eye": window.basicSightAdjectives,
+      "sound_adjectives | fa-ear": window.basicSoundAdjectives,
+      "taste_adjectives | fa-tongue": window.basicTasteAdjectives,
+      "touch_adjectives | fa-hand-sparkles": window.basicTouchAdjectives,
+      "temperature_adjectives | fa-thermometer-half": window.basicTemperatureAdjectives
+    }
+  },
   "house | fa-house-user": {
     "kitchen | fa-utensils": {
       "kitchen_tools | fa-blender": window.kitchenTools,
