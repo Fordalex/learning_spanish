@@ -34,6 +34,11 @@ const data = {
       "rooms | fa-square": window.houseRooms
     }
   },
+  "books | fa-book": {
+    "la_paella_loca | fa-utensils": {
+      "el_avion | fa-1": window.booksLaPaellaLocaElAvion,
+    }
+  },
   "nature | fa-leaf": {
     "park | fa-tree": {
       "facilities | fa-landmark": window.parkFacilities,

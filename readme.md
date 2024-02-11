@@ -141,3 +141,45 @@
 - **Physical Fitness**: Share your fitness journey, workout routines, and healthy lifestyle tips.
 - **Self-Care Rituals**: Talk about self-care practices that help you unwind and recharge.
 - **Happiness and Gratitude**: Explore the pursuit of happiness and ways to cultivate gratitude in daily life.
+
+### la paella loca
+
+#### El Avion
+
+el avion
+desde la puerta
+viajamos
+preparando nuestro viaje
+somos
+un poco largo
+hago mucho
+cada manana
+electricista
+acabo de despertarme
+me duchado hace cinco minutos
+todavia no me he decado
+date prisa
+contiene billetes
+ahorrando
+daros
+se lo voy
+a decir
+salen al pasillo
+ya te has
+hacia
+coche
+conozco
+agradable
+facturando
+sus vuelos
+pero todo ira bien
+armando
+menudo
+abrazan con ternura
+nos despedimos
+mientras
+os pueremos hijos
+esto es lo ultimo que oimos
+el avion despega rumbo a
+van
+
