@@ -25,7 +25,6 @@ const booksLaPaellaLocaElAvion = [
   { "english": "checking in", "spanish": "facturando", "gender": "neutral" },
   { "english": "their flights", "spanish": "sus vuelos", "gender": "masculine" },
   { "english": "but everything will be fine", "spanish": "pero todo ira bien", "gender": "neutral" },
-  { "english": "arming", "spanish": "armando", "gender": "masculine" },
   { "english": "often", "spanish": "menudo", "gender": "neutral" },
   { "english": "they hug tenderly", "spanish": "abrazan con ternura", "gender": "neutral" },
   { "english": "we say goodbye", "spanish": "nos despedimos", "gender": "neutral" },

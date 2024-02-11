@@ -37,6 +37,7 @@ const data = {
   "books | fa-book": {
     "la_paella_loca | fa-utensils": {
       "el_avion | fa-1": window.booksLaPaellaLocaElAvion,
+      "espana | fa-2": window.booksLaPaellaLocaEspana
     }
   },
   "nature | fa-leaf": {

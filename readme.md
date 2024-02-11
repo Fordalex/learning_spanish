@@ -144,42 +144,51 @@
 
 ### la paella loca
 
-#### El Avion
+#### Espana
 
-el avion
-desde la puerta
-viajamos
-preparando nuestro viaje
-somos
-un poco largo
-hago mucho
-cada manana
-electricista
-acabo de despertarme
-me duchado hace cinco minutos
-todavia no me he decado
-date prisa
-contiene billetes
-ahorrando
-daros
-se lo voy
-a decir
-salen al pasillo
-ya te has
+aterriza
+nos espera
+que alegria
+sonriente
 hacia
-coche
-conozco
-agradable
-facturando
-sus vuelos
-pero todo ira bien
-armando
-menudo
-abrazan con ternura
-nos despedimos
-mientras
-os pueremos hijos
-esto es lo ultimo que oimos
-el avion despega rumbo a
-van
-
+desde
+la zona del
+podemos comer
+sirven paellas muy ricas
+pescado fresco
+se queda
+vamos hacia el
+preguntarle
+reponde amablemente
+lleno
+asi podemos comparar los dos
+duermo pronto
+salvo
+digo
+saco el movil
+bolsillo
+encenderlo
+salgo
+creer
+dormido
+paseo
+calles de
+busco
+encontrar
+a la vuelta de la esquina
+recuerdo
+luego pienso
+camarero
+me empiezo
+a reir muy
+comiendo
+tan ironico
+vuelvo
+suena cuatro veces
+que tal en
+pasa
+dile que
+badalona
+encuentro
+pago
+acuesto
