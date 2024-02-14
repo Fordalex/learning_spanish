@@ -32,7 +32,27 @@ const booksLaPaellaLocaElAvion = [
   { "english": "we love you, children", "spanish": "os queremos hijos", "gender": "neutral" },
   { "english": "this is the last thing we hear", "spanish": "esto es lo ultimo que oimos", "gender": "neutral" },
   { "english": "the plane takes off heading to", "spanish": "el avion despega rumbo a", "gender": "neutral" },
-  { "english": "they go", "spanish": "van", "gender": "neutral" }
+  { "english": "they go", "spanish": "van", "gender": "neutral" },
+  { "english": "from", "spanish": "desde", "gender": "neutral" },
+  { "english": "body", "spanish": "cuerpo", "gender": "neutral" },
+  { "english": "I do", "spanish": "hago", "gender": "neutral" },
+  { "english": "I leave", "spanish": "salgo", "gender": "neutral" },
+  { "english": "every", "spanish": "cada", "gender": "neutral" },
+  { "english": "sells", "spanish": "vende", "gender": "neutral" },
+  { "english": "dress", "spanish": "vestido", "gender": "neutral" },
+  { "english": "you wear", "spanish": "vistes", "gender": "neutral" },
+  { "english": "I finish", "spanish": "acabo", "gender": "neutral" },
+  { "english": "to wake up", "spanish": "despertarme", "gender": "neutral" },
+  { "english": "I have", "spanish": "he", "gender": "neutral" },
+  { "english": "we have", "spanish": "hemos", "gender": "neutral" },
+  { "english": "dried", "spanish": "secado", "gender": "neutral" },
+  { "english": "showered ago", "spanish": "duchado hace", "gender": "neutral" },
+  { "english": "dried", "spanish": "secado", "gender": "neutral" },
+  { "english": "goes", "spanish": "va", "gender": "neutral" },
+  { "english": "teaches", "spanish": "ensena", "gender": "neutral" },
+  { "english": "often", "spanish": "a menudo", "gender": "neutral" },
+  { "english": "I put", "spanish": "puse", "gender": "neutral" },
+  { "english": "will go well", "spanish": "ira bien", "gender": "neutral" }
 ];
 
 window.booksLaPaellaLocaElAvion = booksLaPaellaLocaElAvion;
