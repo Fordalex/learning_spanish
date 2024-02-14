@@ -144,51 +144,5 @@
 
 ### la paella loca
 
-#### Espana
+#### La carretera
 
-aterriza
-nos espera
-que alegria
-sonriente
-hacia
-desde
-la zona del
-podemos comer
-sirven paellas muy ricas
-pescado fresco
-se queda
-vamos hacia el
-preguntarle
-reponde amablemente
-lleno
-asi podemos comparar los dos
-duermo pronto
-salvo
-digo
-saco el movil
-bolsillo
-encenderlo
-salgo
-creer
-dormido
-paseo
-calles de
-busco
-encontrar
-a la vuelta de la esquina
-recuerdo
-luego pienso
-camarero
-me empiezo
-a reir muy
-comiendo
-tan ironico
-vuelvo
-suena cuatro veces
-que tal en
-pasa
-dile que
-badalona
-encuentro
-pago
-acuesto

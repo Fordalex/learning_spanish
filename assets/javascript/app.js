@@ -130,6 +130,25 @@ const app = Vue.createApp({
           return items[1]
         }
       },
+      speakInSpanish(text) {
+        var msg = new SpeechSynthesisUtterance();
+        msg.text = text;
+        var voices = window.speechSynthesis.getVoices();
+        var spanishVoice = voices.find(voice => voice.lang === 'es-ES'); // Adjust as needed
+
+        if (spanishVoice) {
+          msg.voice = spanishVoice;
+        } else {
+          console.log("Spanish voice not found. Using default voice.");
+        }
+
+        msg.lang = 'es-ES'; // Fallback
+        msg.onend = function(event) {
+          console.log("Finished in " + event.elapsedTime + " milliseconds.");
+        };
+
+        window.speechSynthesis.speak(msg);
+      },
       selectDificulty(num) {
         this.dificulty = num;
         this.answerOptions = this.extractAllValues(this.randomAnswerValue)
@@ -173,14 +192,10 @@ const app = Vue.createApp({
           this.correct = false;
         }
 
-        var msg = new SpeechSynthesisUtterance();
-        msg.text = this.randomAnswerValue;
-        msg.lang = "es-ES";
-        window.speechSynthesis.speak(msg);
+        this.speakInSpanish(this.randomAnswerValue);
 
         this.showAnswer = true;
         this.message = `
-          <b>Correct Gender:</b> ${genderKey}<br>
           <b>Correct Answer:</b> ${this.correctAnswer}<br>
         `
       },
@@ -229,3 +244,4 @@ const app = Vue.createApp({
       },
     }
 });
+
