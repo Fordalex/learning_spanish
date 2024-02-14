@@ -145,3 +145,28 @@
 ### la paella loca
 
 #### La carretera
+
+
+### La Critura
+
+##### La excursion
+
+conocido
+provincia
+algunas
+cenar
+quedarse
+senderistas
+cada
+llueve bastante
+a menudo
+clima muy suavepo
+por eso
+decidieron
+termino siendo
+siendo
+muy poco normal
+de verse
+verse
+comienzo
+veo

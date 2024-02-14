@@ -87,6 +87,8 @@
 
     <!-- Question Display -->
     <div v-if="randomQuestion">
+      <p class="ps-3">Question {{ currentQuestionIndex }} of {{ questions.length }}</p>
+
       <p class="p-3">What is "{{ questions[randomQuestion]['english'] }}" translated into spanish?<p>
 
       <div class="button-container">
@@ -149,6 +151,7 @@
 
     <script src="assets/data/books/la_paella_loca/el_avion.js"></script>
     <script src="assets/data/books/la_paella_loca/espana.js"></script>
+    <script src="assets/data/books/la_criatura/la_excursion.js"></script>
 
     <script src="assets/data/nature/park/parkFacilities.js"></script>
     <script src="assets/data/nature/park/parkActivities.js"></script>

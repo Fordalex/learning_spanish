@@ -38,6 +38,9 @@ const data = {
     "la_paella_loca | fa-utensils": {
       "el_avion | fa-1": window.booksLaPaellaLocaElAvion,
       "espana | fa-2": window.booksLaPaellaLocaEspana
+    },
+    "la_criatura | fa-dove": {
+      "la_excursion | fa-1": window.booksLaCriaturaLaExcursion,
     }
   },
   "nature | fa-leaf": {
@@ -107,6 +110,7 @@ const app = Vue.createApp({
         selectedCategory: null,
         selectedSubcategory: null,
         selectedFinalCategory: null,
+        currentQuestionIndex: 0,
         questions: [],
         answerOptions: [],
         randomQuestion: null,
@@ -170,9 +174,13 @@ const app = Vue.createApp({
       },
       pickRandomQuestion() {
         const questionKeys = Object.keys(this.questions);
-        const randomKey = questionKeys[Math.floor(Math.random() * questionKeys.length)];
-        this.randomQuestion = randomKey;
-        this.randomAnswerValue = this.questions[randomKey]['spanish'];
+        const questionKey = questionKeys[this.currentQuestionIndex];
+
+        // Update the current question index for the next question
+        this.currentQuestionIndex = (this.currentQuestionIndex + 1) % questionKeys.length;
+
+        this.randomQuestion = questionKey;
+        this.randomAnswerValue = this.questions[questionKey]['spanish'];
         this.answerOptions = this.extractAllValues(this.randomAnswerValue)
       },
       chooseGender(gender) {
